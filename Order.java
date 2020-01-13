@@ -18,21 +18,22 @@ class Order
             total += item.getPrice();
         }
 
-        return (total / 100.0) * TAX; // convet to $ and add sales tax
+        total = (total / 100.0) * TAX;
+        return total; // convet to $ and add sales tax
     }
 
     public void createTable()
     {
-        System.out.println("name = " + customer.getName() + "email = " + customer.getEmail());
-        System.out.println("item names: \t price: \t id: \t");
+        System.out.println("name = " + customer.getName() + "  email = " + customer.getEmail());
+        System.out.println("item names: \t price: \t\t id:");
 
         for (Item item : items)
         {
-            System.out.println(item.getName() + "\t" + item.getPrice() + "\t" + item.getId());
+            System.out.println(item.getName() + "" + item.getPriceDollars() + "\t\t\t" + item.getId());
         }
          
         System.out.println("price before tax: " + getTotalPrice() / TAX);
-        System.out.println("tax: " + (getTotalPrice()) - (getTotalPrice() / TAX));
-        System.out.println("price after tax" + getTotalPrice());
+        System.out.println("tax: " + (total - (total / TAX) ) );
+        System.out.println("price after tax: " + getTotalPrice());
     }
 }

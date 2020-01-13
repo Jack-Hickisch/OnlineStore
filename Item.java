@@ -7,8 +7,18 @@ class Item
     public Item(String name, String id, int price)
     {
         this.name = name;
+        while (this.name.length() <= 16)
+        {
+            this.name += " ";
+        }
+
         this.id = id;
+
         this.price = price;
+        // while (getPriceLength() <= 16)
+        // {
+        //     this.price += " ";
+        // }  Fix this
     }
 
     public String getName() 
@@ -26,7 +36,7 @@ class Item
         return price;
     }
 
-    public int getPriceDollars()
+    public double getPriceDollars()
     {
         return price / 100.0;
     }
@@ -38,11 +48,17 @@ class Item
 
     public void setId(String id) 
     {
-        id = str;
+        this.id = id;
     }
 
     public void setPrice(int price) 
     {
         this.price = price;
     }
+
+    // public int getPriceLength() Fix this
+    // {
+    //     String priceString = (String)price;
+    //     return priceString.length();
+    // }
 }
