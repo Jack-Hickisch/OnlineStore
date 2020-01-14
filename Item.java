@@ -1,10 +1,13 @@
+import java.util.*;
+
 class Item
 {
     private String name;
-    private String id;
+    private int id;
     private int price; // cents
+    
 
-    public Item(String name, String id, int price)
+    public Item(String name, int price)
     {
         this.name = name;
         while (this.name.length() <= 16)
@@ -12,7 +15,7 @@ class Item
             this.name += " ";
         }
 
-        this.id = id;
+        id = SKUCreator();
 
         this.price = price;
     }
@@ -22,7 +25,7 @@ class Item
         return name;
     }
 
-    public String getId() 
+    public int getId() 
     {
         return id;
     }
@@ -42,7 +45,7 @@ class Item
         name = str;
     }
 
-    public void setId(String id) 
+    public void setId(int id) 
     {
         this.id = id;
     }
@@ -63,5 +66,12 @@ class Item
         }
 
         return priceString;
+    }
+
+    public static int SKUCreator()
+    {
+        int startSKU = 0;
+        startSKU += 1;
+        return startSKU;
     }
 }
