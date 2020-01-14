@@ -15,10 +15,6 @@ class Item
         this.id = id;
 
         this.price = price;
-        // while (getPriceLength() <= 16)
-        // {
-        //     this.price += " ";
-        // }  Fix this
     }
 
     public String getName() 
@@ -56,9 +52,16 @@ class Item
         this.price = price;
     }
 
-    // public int getPriceLength() Fix this
-    // {
-    //     String priceString = (String)price;
-    //     return priceString.length();
-    // }
+    public String getPriceAndSpaces()
+    {
+
+        String priceString = Double.toString(getPriceDollars());
+
+        while (priceString.length() <= 15)
+        {
+            priceString += " ";
+        }
+
+        return priceString;
+    }
 }

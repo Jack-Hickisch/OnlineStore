@@ -13,7 +13,7 @@ class StoreTester
         items[6] = new Item("burrito", "06", 5);
         items[7] = new Item("zipper", "07", 88);
         items[8] = new Item("flag", "08", 0);
-        items[9] = new Item("ui", "09", 9);
+        items[9] = new Item("g", "09", 9);
 
         Customer bob = new Customer("bob", "bob@gmail.com");
 
